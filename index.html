@@ -55,11 +55,33 @@ padding: 20px;
 .card{padding:20px;background:#fff;border-radius:12px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.1);cursor:pointer}
 .card:hover{transform:translateY(-5px)}
 .hidden{display:none;}
-footer{background:#0a3d62;color:#fff;padding:30px}
-.social i{ color: white;margin:10px;font-size:20px;cursor:pointer}
+footer{
+  background:#0a3d62;
+  color:#fff;
+  padding:30px 15px;
+  text-align:center;
+}
+
+.social{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.social i{
+  font-size:20px;
+  cursor:pointer;
+}
 .cart{background:#fff;padding:15px;border-radius:10px;margin-top:10px}
 .navbar{display: flex; flex-direction: columnn; justify-content: space-between; gap:10rem;}
-.follow{display: flex; flex-direction: column; justify-content: space-betweeb; row; gap:10px;}
+.follow{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
 .cs-item{
 cursor:pointer;
 margin:5px 0;
@@ -157,8 +179,21 @@ scroll-margin-top:80px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 12px;
   }
-
+  .follow{
+    display: flex;
+    flex-direction: row; /* change to row */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+  }
+ .follow h3{
+    font-size: 18px;
+  }
 }
 
 </style>
