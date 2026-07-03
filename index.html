@@ -7,9 +7,33 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <style>
+  * {
+  box-sizing: border-box;
+}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-body{scroll-behavior:smooth;background:#f9f9f9}
+body{scroll-behavior:smooth;background:#f9f9f9;padding-top: 80px;}
 header{display:flex;justify-content:space-between;align-items:center;padding:15px 30px;background:#0a3d62;color:#fff;position:fixed;width:100%;top:0;z-index:1000}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+@media (max-width: 768px) {
+
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+}
 nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:500}
 nav a:hover{color:#f39c12}
 .search{padding:6px;border-radius:5px;border:none}
@@ -21,9 +45,10 @@ display:flex;
 justify-content:center;
 align-items:center;
 color:#fff;
-text-align:center
+text-align:center;
+padding: 20px;
 }
-#home h1{font-size:55px}
+#home h1{font-size:28px}
 .btn{background:#f39c12;padding:12px 25px;color:#fff;border:none;border-radius:5px;cursor:pointer;margin-top:15px}
 .container{max-width:1100px;margin:auto}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
@@ -66,6 +91,74 @@ transform:scale(1.05);
 
 #colors{
 scroll-margin-top:80px;
+}
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px){
+
+  header{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .header-container{
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .nav-links{
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  nav a{
+    display: block;
+    padding: 8px 0;
+  }
+
+  #home{
+    height: auto;
+    padding: 120px 20px 60px;
+  }
+
+  #home h1{
+    font-size: 22px;
+  }
+
+  section{
+    padding: 80px 15px;
+  }
+
+  .grid{
+    grid-template-columns: 1fr;
+  }
+
+  .card{
+    width: 100%;
+  }
+
+  .card img{
+    height: 150px;
+  }
+
+  .container{
+    padding: 0 10px;
+  }
+
+  footer{
+    text-align: center;
+  }
+
+  .social{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
 }
 
 </style>
