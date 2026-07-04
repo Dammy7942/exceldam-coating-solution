@@ -13,6 +13,9 @@
   box-sizing:border-box;
   font-family:'Segoe UI',sans-serif;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 body{
   scroll-behavior:smooth;
@@ -45,6 +48,9 @@ header{
 .nav-links{
   display:flex;
   gap:15px;
+}
+.nav-links a{
+  padding:10px;
 }
 
 nav a{
@@ -93,6 +99,11 @@ section{
   border-radius:5px;
   cursor:pointer;
   margin-top:15px;
+  transition:0.3s;
+}
+.btn:hover{
+  background:#e67e22;
+  transform:scale(1.05);
 }
 
 /* GRID */
@@ -118,7 +129,8 @@ section{
 }
 
 .card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-10px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .card img{
@@ -171,6 +183,12 @@ footer{
   flex-wrap:wrap;
   gap:20px;
 }
+.cs-item{
+  cursor: pointer;
+}
+.cs-item:hover{
+  color:#f39c12
+}
 
 /* FOLLOW US FIX */
 .follow{
@@ -195,6 +213,34 @@ footer{
   color:#fff;
   font-size:20px;
   text-decoration:none;
+}
+/* HAMBURGER */
+.menu-toggle{
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* MOBILE NAV */
+@media (max-width:768px){
+
+  .menu-toggle{
+    display: block;
+  }
+
+  .nav-links{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background:#0a3d62;
+    margin-top:10px;
+    padding:10px;
+  }
+
+  .nav-links.active{
+    display: flex;
+  }
+
 }
 
 /* ================= MOBILE ================= */
@@ -256,8 +302,13 @@ footer{
 <body>
 
 <header>
+
+  <div class="header-container">
 <h2>Exceldam Coating & Solution</h2>
-<nav>
+
+ <div class="menu-toggle" id="menu-toggle">☰</div>
+
+<nav class="nav-links" id="nav-links">
 <a href="#home">Home</a>
 <a href="#product">Product</a>
 <a href="#order">Order</a>
@@ -265,7 +316,7 @@ footer{
 <a href="#contact">Contact</a>
 
 </nav>
-
+</div>
 </header>
 
 <section id="home">
@@ -443,6 +494,13 @@ At Exceldam, we value quality, customer satisfaction, and consistency. Whether y
 </footer>
 
 <script>
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
 function showCategory(cat){
 document.getElementById('interior').classList.add('hidden');
 document.getElementById('exterior').classList.add('hidden');
